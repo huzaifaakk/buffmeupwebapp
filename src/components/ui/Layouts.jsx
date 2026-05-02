@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { LogOut } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import buffmeupLogo from '../../assets/buffmeuplogo.webp';
 
 export const SidebarLayout = ({ children, title, links }) => {
   const { signOut, user } = useAuth();
@@ -17,7 +18,7 @@ export const SidebarLayout = ({ children, title, links }) => {
     <div className="layout-container">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h2>BUFFMEUP</h2>
+          <img src={buffmeupLogo} alt="BUFFMEUP" className="sidebar-logo" />
         </div>
         <nav className="sidebar-nav">
           {links.map((link, idx) => (
@@ -60,7 +61,11 @@ export const SidebarLayout = ({ children, title, links }) => {
         }
         .sidebar-header {
           padding: 2rem 1.5rem;
-          color: var(--accent-primary);
+        }
+        .sidebar-logo {
+          width: 100%;
+          height: auto;
+          max-width: 180px;
         }
         .sidebar-nav {
           flex: 1;

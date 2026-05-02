@@ -3,6 +3,7 @@ import { ThemeToggle } from '../../components/ui/ThemeToggle';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { LogOut } from 'lucide-react';
+import buffmeupLogo from '../../assets/buffmeuplogo.webp';
 
 export const ClientLayout = ({ children, activePath }) => {
   const { signOut } = useAuth();
@@ -16,7 +17,7 @@ export const ClientLayout = ({ children, activePath }) => {
   return (
     <div className="client-layout">
       <nav className="top-nav">
-        <div className="nav-brand">BUFFMEUP</div>
+        <img src={buffmeupLogo} alt="BUFFMEUP" className="nav-logo" />
         <div className="nav-links items-center">
           <a href="/client" className={activePath === '/client' ? 'active' : ''}>Dashboard</a>
           <a href="/client/sessions" className={activePath === '/client/sessions' ? 'active' : ''}>Sessions</a>
@@ -37,7 +38,7 @@ export const ClientLayout = ({ children, activePath }) => {
       <style>{`
         .client-layout { min-height: 100vh; background-color: var(--bg-color); }
         .top-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: var(--bg-card); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 10; }
-        .nav-brand { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: 1px; }
+        .nav-logo { height: 40px; width: auto; }
         .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
         .nav-links a { color: var(--text-secondary); font-weight: 500; transition: color 0.2s; text-decoration: none; }
         .nav-links a:hover, .nav-links a.active { color: var(--accent-primary); }

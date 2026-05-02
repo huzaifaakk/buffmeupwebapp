@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import buffmeupLogo from '../assets/buffmeuplogo.webp';
 
 export const Splash = () => {
   const { user, profile, loading } = useAuth();
@@ -24,7 +25,7 @@ export const Splash = () => {
   return (
     <div className="splash-container">
       <div className="splash-content fade-in">
-        <h1 className="splash-title">BUFFMEUP</h1>
+        <img src={buffmeupLogo} alt="BUFFMEUP" className="splash-logo" />
         <div className="loader"></div>
       </div>
       <style>{`
@@ -43,10 +44,10 @@ export const Splash = () => {
           align-items: center;
           gap: 2rem;
         }
-        .splash-title {
-          font-size: 3rem;
-          color: var(--accent-primary);
-          letter-spacing: 2px;
+        .splash-logo {
+          width: 200px;
+          height: auto;
+          max-width: 80vw;
         }
         .loader {
           width: 48px;
