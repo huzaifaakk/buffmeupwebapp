@@ -35,13 +35,23 @@ import { ClientTrainer } from './pages/client/Trainer';
 import { ClientGoals } from './pages/client/Goals';
 import { ClientProfile } from './pages/client/Profile';
 import { ClientProgress } from './pages/client/Progress';
+import { ClientNutrition } from './pages/client/Nutrition';
+import { ClientPoseAnalysis } from './pages/client/PoseAnalysis';
 
+// Shared Portals
+import { SharedExercises } from './pages/shared/Exercises';
 const ProtectedRoute = ({ children, allowedRole }) => {
   const { user, profile, loading } = useAuth();
 
   if (loading) return <div className="splash-container"><div className="loader"></div></div>;
   if (!user) return <Navigate to="/login" replace />;
-  if (!profile || profile.role !== allowedRole) {
+  if (!profile) {
+    return <Navigate to="/" replace />;
+  }
+  
+  const userRole = profile.role || 'client';
+  
+  if (userRole !== allowedRole) {
     return <Navigate to="/" replace />; // Let splash redirect to correct dashboard
   }
 
@@ -77,6 +87,7 @@ function App() {
           <Route path="/trainer/plans/:planId" element={<ProtectedRoute allowedRole="trainer"><TrainerPlanEditor /></ProtectedRoute>} />
           <Route path="/trainer/messages" element={<ProtectedRoute allowedRole="trainer"><TrainerMessages /></ProtectedRoute>} />
           <Route path="/trainer/profile" element={<ProtectedRoute allowedRole="trainer"><TrainerProfile /></ProtectedRoute>} />
+          <Route path="/trainer/exercises" element={<ProtectedRoute allowedRole="trainer"><SharedExercises role="trainer" /></ProtectedRoute>} />
           
           {/* Client Routes */}
           <Route path="/client" element={<ProtectedRoute allowedRole="client"><ClientDashboard /></ProtectedRoute>} />
@@ -86,6 +97,9 @@ function App() {
           <Route path="/client/trainer" element={<ProtectedRoute allowedRole="client"><ClientTrainer /></ProtectedRoute>} />
           <Route path="/client/goals" element={<ProtectedRoute allowedRole="client"><ClientGoals /></ProtectedRoute>} />
           <Route path="/client/profile" element={<ProtectedRoute allowedRole="client"><ClientProfile /></ProtectedRoute>} />
+          <Route path="/client/exercises" element={<ProtectedRoute allowedRole="client"><SharedExercises role="client" /></ProtectedRoute>} />
+          <Route path="/client/nutrition" element={<ProtectedRoute allowedRole="client"><ClientNutrition /></ProtectedRoute>} />
+          <Route path="/client/pose-analysis" element={<ProtectedRoute allowedRole="client"><ClientPoseAnalysis /></ProtectedRoute>} />
 
           {/* Catch all */}
           <Route path="*" element={<Navigate to="/" replace />} />

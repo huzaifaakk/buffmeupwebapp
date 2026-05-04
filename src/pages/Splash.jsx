@@ -14,8 +14,9 @@ export const Splash = () => {
           // If no user, or user exists but profile failed to fetch, go to login
           navigate('/login');
         } else {
-          if (profile.role === 'admin') navigate('/admin');
-          else if (profile.role === 'trainer') navigate('/trainer');
+          const userRole = profile.role || 'client';
+          if (userRole === 'admin') navigate('/admin');
+          else if (userRole === 'trainer') navigate('/trainer');
           else navigate('/client');
         }
       }, 500); // 500ms splash screen delay

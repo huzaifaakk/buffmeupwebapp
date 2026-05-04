@@ -8,6 +8,7 @@ export const trainerLinks = [
   { label: 'Dashboard', path: '/trainer' },
   { label: 'My Clients', path: '/trainer/clients' },
   { label: 'Workout Plans', path: '/trainer/plans' },
+  { label: 'Exercises', path: '/trainer/exercises' },
   { label: 'Messages', path: '/trainer/messages' },
   { label: 'My Profile', path: '/trainer/profile' },
 ];

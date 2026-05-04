@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { LogOut } from 'lucide-react';
 import buffmeupLogo from '../../assets/buffmeuplogo.webp';
 
-export const ClientLayout = ({ children, activePath }) => {
+export const ClientLayout = ({ children, activePath, fullWidth = false }) => {
   const { signOut } = useAuth();
   const navigate = useNavigate();
 
@@ -24,6 +24,9 @@ export const ClientLayout = ({ children, activePath }) => {
           <a href="/client/progress" className={activePath === '/client/progress' ? 'active' : ''}>Progress</a>
           <a href="/client/feed" className={activePath === '/client/feed' ? 'active' : ''}>Feed</a>
           <a href="/client/trainer" className={activePath === '/client/trainer' ? 'active' : ''}>Trainer</a>
+          <a href="/client/exercises" className={activePath === '/client/exercises' ? 'active' : ''}>Exercises</a>
+          <a href="/client/nutrition" className={activePath === '/client/nutrition' ? 'active' : ''}>Nutrition</a>
+          <a href="/client/pose-analysis" className={activePath === '/client/pose-analysis' ? 'active' : ''}>Pose AI</a>
           <a href="/client/goals" className={activePath === '/client/goals' ? 'active' : ''}>Goals</a>
           <a href="/client/profile" className={activePath === '/client/profile' ? 'active' : ''}>Profile</a>
           <ThemeToggle />
@@ -32,7 +35,7 @@ export const ClientLayout = ({ children, activePath }) => {
           </button>
         </div>
       </nav>
-      <main className="client-main fade-in">
+      <main className={`client-main fade-in ${fullWidth ? 'full-width' : ''}`}>
         {children}
       </main>
       <style>{`
@@ -44,7 +47,8 @@ export const ClientLayout = ({ children, activePath }) => {
         .nav-links a:hover, .nav-links a.active { color: var(--accent-primary); }
         .btn-logout-client { background: transparent; border: none; color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; padding: 0.5rem; transition: color 0.2s; }
         .btn-logout-client:hover { color: var(--status-danger); }
-        .client-main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .client-main { max-width: 1200px; margin: 0 auto; padding: 2rem; transition: max-width 0.3s ease; }
+        .client-main.full-width { max-width: 1800px; width: 100%; padding: 2rem 4%; }
       `}</style>
     </div>
   );

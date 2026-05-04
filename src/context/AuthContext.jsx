@@ -96,7 +96,7 @@ export const AuthProvider = ({ children }) => {
   }, [profile]); // Added profile to deps to help check in onAuthStateChange
 
   const signIn = async (email, password) => {
-    return supabase.auth.signInWithPassword({ email, password });
+    return supabase.auth.signInWithPassword({ email: email.trim(), password });
   };
 
   const signUp = async (email, password, role, name, username) => {
