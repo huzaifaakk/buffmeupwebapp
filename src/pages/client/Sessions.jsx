@@ -19,7 +19,6 @@ export const ClientLayout = ({ children, activePath, fullWidth = false }) => {
       <nav className="top-nav">
         <img src={buffmeupLogo} alt="BUFFMEUP" className="nav-logo" />
         <div className="nav-links items-center">
-          <a href="/client" className={activePath === '/client' ? 'active' : ''}>Dashboard</a>
           <a href="/client/feed" className={activePath === '/client/feed' ? 'active' : ''}>Social Feed</a>
           <a href="/client/exercises" className={activePath === '/client/exercises' ? 'active' : ''}>Exercise Library</a>
           <a href="/client/nutrition" className={activePath === '/client/nutrition' ? 'active' : ''}>Nutrient Tracker</a>

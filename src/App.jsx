@@ -91,7 +91,7 @@ function App() {
           <Route path="/trainer/exercises" element={<ProtectedRoute allowedRole="trainer"><SharedExercises role="trainer" /></ProtectedRoute>} />
           
           {/* Client Routes */}
-          <Route path="/client" element={<ProtectedRoute allowedRole="client"><ClientDashboard /></ProtectedRoute>} />
+          <Route path="/client" element={<Navigate to="/client/feed" replace />} />
           <Route path="/client/feed" element={<ProtectedRoute allowedRole="client"><ClientFeed /></ProtectedRoute>} />
           <Route path="/client/sessions" element={<ProtectedRoute allowedRole="client"><ClientSessions /></ProtectedRoute>} />
           <Route path="/client/progress" element={<ProtectedRoute allowedRole="client"><ClientProgress /></ProtectedRoute>} />
