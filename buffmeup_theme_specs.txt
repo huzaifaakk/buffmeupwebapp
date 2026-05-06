@@ -1,0 +1,84 @@
+# BUFFMEUP App Design & Theme Specification
+
+This document outlines the visual identity and design system for the BUFFMEUP fitness platform, used for the "Kinetic Precision" design aesthetic.
+
+## 1. Brand Concept
+- **App Name:** BUFFMEUP
+- **Design Philosophy:** Kinetic Precision (Modern, high-performance, clean, and energetic).
+- **Style Keywords:** Glassmorphism, Neon Accents, Performance-driven, Premium.
+
+## 2. Color Palette
+
+### 2.1 Core Accents
+- **Primary Accent:** #00D2FF (Electric Cyan / Sky Blue) - Used for primary actions, links, and branding highlights.
+- **Secondary Accent:** #22C55E (Vibrant Green) - Used for success states, progress tracking, and energy-related elements.
+
+### 2.2 Status Colors
+- **Success:** #22C55E (Green)
+- **Warning:** #EAB308 (Gold/Yellow)
+- **Danger:** #EF4444 (Bright Red)
+
+### 2.3 Light Theme (Client/Trainer Dashboard)
+- **Main Background:** #FAFAFA (Off-white)
+- **Sidebar Background:** #1A1A2E (Deep Navy Blue - provides high contrast)
+- **Card Background:** #FFFFFF (Pure White)
+- **Border/Dividers:** #E2E8F0 (Soft Gray)
+- **Primary Text:** #0F172A (Deep Slate/Black)
+- **Secondary Text:** #64748B (Cool Gray)
+
+### 2.4 Dark Theme (Admin Dashboard / High-Performance Mode)
+- **Main Background:** #0F1117 (Deep Obsidian)
+- **Sidebar Background:** #16181F (Dark Slate)
+- **Card Background:** #1E2028 (Cool Charcoal)
+- **Border/Dividers:** #2A2D35 (Muted Slate)
+- **Primary Text:** #F1F5F9 (Soft White)
+- **Secondary Text:** #94A3B8 (Blue-Gray)
+
+## 3. Typography
+- **Headings/Display:** 'Sora' (Geometric, modern, bold sans-serif)
+- **Body Text:** 'Inter' (Highly legible, professional sans-serif)
+- **Data/Mono:** 'JetBrains Mono' (For technical data, metrics, and code-like precision)
+
+## 4. UI Elements & Effects
+- **Border Radii:**
+  - Cards: 12px
+  - Buttons: 8px
+  - Badges/Pills: 9999px (Fully Rounded)
+- **Gradients:**
+  - Dynamic Flow: Linear gradient from #00D2FF (Primary) to #22C55E (Secondary).
+  - Background Depth: Radial gradient starting from Sidebar color to Main Background color.
+- **Special Effects:**
+  - Glassmorphism: Semi-transparent surfaces with background blur (backdrop-filter: blur(10px)).
+  - Shadows: Soft, multi-layered shadows for depth (MD: 0 4px 6px -1px rgba(0,0,0,0.1)).
+
+## 5. Visual Character
+The design should feel like a high-end fitness laboratory or a premium coaching platform. It uses clean lines, ample whitespace, and sharp contrast between dark sidebar elements and light content areas (in light mode) or deep obsidian tones (in dark mode). Highlights should feel "glowing" or "energetic" against the darker backgrounds.
+
+---
+
+# PANAFLEX BANNER DESIGN CONTENT
+
+This section provides the specific text and layout ideas for a physical Panaflex banner (e.g., for a gym or event).
+
+## 1. Primary Branding
+- **Main Title:** BUFFMEUP
+- **Primary Slogan:** Kinetic Precision. Peak Performance.
+- **Secondary Tagline:** AI-Powered Fitness Coaching & Analytics
+
+## 2. Key Features (To be listed as bullet points or icons)
+- **AI POSE ANALYSIS:** Real-time form correction using advanced computer vision.
+- **ELITE COACHING:** Direct access to professional trainers and personalized plans.
+- **SMART NUTRITION:** Tailored meal plans synced with your fitness goals.
+- **REAL-TIME TRACKING:** Monitor every rep, set, and session with precision.
+- **COMMUNITY FEED:** Share your progress and join a community of high-performers.
+
+## 3. Call to Action (CTA)
+- **Main Link:** www.buffmeup.app (or your specific URL)
+- **App Stores:** "Available on iOS & Android" (Include App Store/Play Store icons)
+- **QR Code:** Leave space for a large QR code pointing to the signup page.
+
+## 4. Suggested Visual Layout
+- **Background:** Use the deep navy (`#1A1A2E`) from the Sidebar color as the main background to make the white/cyan text pop.
+- **Hero Image:** A high-quality photo of someone using a phone for pose analysis (AI tracking lines visible) or a professional athlete in motion.
+- **Accents:** Use the Electric Cyan (`#00D2FF`) for the most important words like "AI POSE ANALYSIS" and for the main border/lines.
+- **Footer:** A clean strip at the bottom using the Primary Accent (`#00D2FF`) with white text for the website and social handles.
