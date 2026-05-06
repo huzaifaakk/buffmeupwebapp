@@ -36,6 +36,7 @@ import { ClientGoals } from './pages/client/Goals';
 import { ClientProfile } from './pages/client/Profile';
 import { ClientProgress } from './pages/client/Progress';
 import { ClientNutrition } from './pages/client/Nutrition';
+import { ClientMeals } from './pages/client/Meals';
 import { ClientPoseAnalysis } from './pages/client/PoseAnalysis';
 
 // Shared Portals
@@ -99,6 +100,7 @@ function App() {
           <Route path="/client/profile" element={<ProtectedRoute allowedRole="client"><ClientProfile /></ProtectedRoute>} />
           <Route path="/client/exercises" element={<ProtectedRoute allowedRole="client"><SharedExercises role="client" /></ProtectedRoute>} />
           <Route path="/client/nutrition" element={<ProtectedRoute allowedRole="client"><ClientNutrition /></ProtectedRoute>} />
+          <Route path="/client/meals" element={<ProtectedRoute allowedRole="client"><ClientMeals /></ProtectedRoute>} />
           <Route path="/client/pose-analysis" element={<ProtectedRoute allowedRole="client"><ClientPoseAnalysis /></ProtectedRoute>} />
 
           {/* Catch all */}

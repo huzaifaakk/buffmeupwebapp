@@ -19,8 +19,9 @@ export const ClientProfile = () => {
           <div className="mt-4 border-t pt-4">
             <h3 className="text-lg mb-4">Physical Attributes</h3>
             <div className="flex gap-4">
-              <Input label="Height (cm)" type="number" defaultValue={180} />
-              <Input label="Weight (lbs)" type="number" defaultValue={185} />
+              <Input label="Age" type="number" defaultValue={profile?.age || ''} />
+              <Input label="Height (cm)" type="number" defaultValue={profile?.height || ''} />
+              <Input label="Weight (lbs)" type="number" defaultValue={profile?.weight || ''} />
             </div>
           </div>
           

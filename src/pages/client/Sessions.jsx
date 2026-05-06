@@ -20,14 +20,11 @@ export const ClientLayout = ({ children, activePath, fullWidth = false }) => {
         <img src={buffmeupLogo} alt="BUFFMEUP" className="nav-logo" />
         <div className="nav-links items-center">
           <a href="/client" className={activePath === '/client' ? 'active' : ''}>Dashboard</a>
-          <a href="/client/sessions" className={activePath === '/client/sessions' ? 'active' : ''}>Sessions</a>
-          <a href="/client/progress" className={activePath === '/client/progress' ? 'active' : ''}>Progress</a>
-          <a href="/client/feed" className={activePath === '/client/feed' ? 'active' : ''}>Feed</a>
-          <a href="/client/trainer" className={activePath === '/client/trainer' ? 'active' : ''}>Trainer</a>
-          <a href="/client/exercises" className={activePath === '/client/exercises' ? 'active' : ''}>Exercises</a>
-          <a href="/client/nutrition" className={activePath === '/client/nutrition' ? 'active' : ''}>Nutrition</a>
-          <a href="/client/pose-analysis" className={activePath === '/client/pose-analysis' ? 'active' : ''}>Pose AI</a>
-          <a href="/client/goals" className={activePath === '/client/goals' ? 'active' : ''}>Goals</a>
+          <a href="/client/feed" className={activePath === '/client/feed' ? 'active' : ''}>Social Feed</a>
+          <a href="/client/exercises" className={activePath === '/client/exercises' ? 'active' : ''}>Exercise Library</a>
+          <a href="/client/nutrition" className={activePath === '/client/nutrition' ? 'active' : ''}>Nutrient Tracker</a>
+          <a href="/client/meals" className={activePath === '/client/meals' ? 'active' : ''}>Meal Suggestions</a>
+          <a href="/client/pose-analysis" className={activePath === '/client/pose-analysis' ? 'active' : ''}>AI Pose Analysis</a>
           <a href="/client/profile" className={activePath === '/client/profile' ? 'active' : ''}>Profile</a>
           <ThemeToggle />
           <button onClick={handleLogout} className="btn-logout-client" title="Logout">

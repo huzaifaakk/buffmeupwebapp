@@ -47,7 +47,7 @@ export const Input = ({ label, type = 'text', ...props }) => {
           padding: 0.75rem 1rem;
           border-radius: var(--radius-btn);
           border: 1px solid var(--border-color);
-          background-color: var(--bg-sidebar); /* Darker background for contrast */
+          background-color: var(--bg-color); /* Updated for better contrast in light mode */
           color: var(--text-primary);
           outline: none;
           transition: border-color 0.2s;

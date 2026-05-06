@@ -99,13 +99,22 @@ export const AuthProvider = ({ children }) => {
     return supabase.auth.signInWithPassword({ email: email.trim(), password });
   };
 
-  const signUp = async (email, password, role, name, username) => {
+  const signUp = async (email, password, role, name, username, age, height, weight) => {
     // 1. Sign up user
     const { data, error } = await supabase.auth.signUp({ email, password });
     if (error) return { error };
 
     const userId = data.user.id;
-    const newProfile = { id: userId, email, role, name, username };
+    const newProfile = { 
+      id: userId, 
+      email, 
+      role, 
+      name, 
+      username, 
+      age: age ? parseInt(age) : null, 
+      height: height ? parseFloat(height) : null, 
+      weight: weight ? parseFloat(weight) : null 
+    };
 
     // 2. Create profile
     const { error: profileError } = await supabase.from('profiles').upsert([newProfile]);

@@ -15,7 +15,10 @@ export const Register = () => {
     name: '',
     username: '',
     email: '',
-    password: ''
+    password: '',
+    age: '',
+    height: '',
+    weight: ''
   });
 
   const [error, setError] = useState(null);
@@ -39,7 +42,10 @@ export const Register = () => {
       formData.password,
       role,
       formData.name,
-      formData.username
+      formData.username,
+      formData.age,
+      formData.height,
+      formData.weight
     );
 
     if (signUpError) {
@@ -144,6 +150,38 @@ export const Register = () => {
                 required
                 placeholder="••••••••"
               />
+
+              {role === 'client' && (
+                <div className="flex gap-4">
+                  <Input
+                    label="Age"
+                    type="number"
+                    name="age"
+                    value={formData.age}
+                    onChange={handleChange}
+                    required
+                    placeholder="25"
+                  />
+                  <Input
+                    label="Height (cm)"
+                    type="number"
+                    name="height"
+                    value={formData.height}
+                    onChange={handleChange}
+                    required
+                    placeholder="180"
+                  />
+                  <Input
+                    label="Weight (lbs)"
+                    type="number"
+                    name="weight"
+                    value={formData.weight}
+                    onChange={handleChange}
+                    required
+                    placeholder="185"
+                  />
+                </div>
+              )}
 
               <Button type="submit" className="w-full mt-4" disabled={loading}>
                 {loading ? 'Creating Account...' : 'Complete Sign Up'}
