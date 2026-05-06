@@ -138,13 +138,27 @@ export const AuthProvider = ({ children }) => {
     await supabase.auth.signOut();
   };
 
+  const updateProfile = async (updates) => {
+    if (!user) return { error: new Error('No user logged in') };
+    const { error } = await supabase
+      .from('profiles')
+      .update(updates)
+      .eq('id', user.id);
+    
+    if (error) return { error };
+    
+    setProfile(prev => ({ ...prev, ...updates }));
+    return { error: null };
+  };
+
   const value = {
     user,
     profile,
     loading,
     signIn,
     signUp,
-    signOut
+    signOut,
+    updateProfile
   };
 
   return (
